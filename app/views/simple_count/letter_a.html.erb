@@ -1,0 +1,16 @@
+<div class="jumbotron">
+    <h1>How many "A"s in "Pikachu?"</h1>
+    <p class="lead">A really easy to solve question</p>
+</div>
+<blockquote class="blockquote text-center">
+    <p class="lead" style="border: black; border-style: dotted;">
+        <% if @reveal %>
+            One
+        <% else %>
+            ???
+        <% end %>
+    </p>
+    <% unless @reveal %>
+    <footer><%= link_to 'Reveal', simple_count_letter_a_path(reveal: true), class: "btn btn-primary btn-small" %></footer>
+    <% end %>
+</blockquote>
