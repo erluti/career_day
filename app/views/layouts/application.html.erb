@@ -10,6 +10,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <h1>Career Day!</h1>
+      <div class="row" style="padding-left: 10px;">
+        <ul class="list-group col-sm-2">
+          <%= link_to 'Step 1', software_engineer_welcome_path, class: "list-group-item#{current_page?(software_engineer_welcome_path) ? ' active' : ''}" %>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+        </ul>
+        <div class="col-md-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
