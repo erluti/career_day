@@ -1,0 +1,26 @@
+<div class="jumbotron">
+    <h1>Which Pokémon have <em><%= @word || '???' %></em> in the name?</h1>
+    <p class="lead">The computer can do things that would take us a long time to do.</p>
+</div>
+<blockquote class="blockquote text-center">
+    <p class="lead">
+        <% if @matches %>
+            <table class="table">
+                <% @matches.each do |pokemon| %>
+                    <tr>
+                        <th><%= pokemon.name.titlecase %></th>
+                        <td><%= image_for(pokemon) %></td>
+                    </tr>
+                <% end %>
+            </table>
+        <% else %>
+            ???
+        <% end %>
+    </p>
+    <footer>
+        <%= form_tag(pokemon_by_word_path, method: :get) do %>
+            <%= text_field_tag :word, @word %>
+            <%= submit_tag 'Find',  class: "btn btn-primary btn-small" %>
+        <% end %>
+    </footer>
+</blockquote>
