@@ -7,7 +7,7 @@ class SimpleCountController < ApplicationController
     # REVIEW make a "LetterCounter" class and show off tests?
     @letter = params[:letter]
     if @letter.present?
-      @letter_count = 'pikachu'.count(@letter.downcase)
+      @letter_count = 'bulbasaur'.count(@letter.downcase)
     else
       @letter = '?'
     end
