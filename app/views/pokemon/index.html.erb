@@ -1,2 +1,21 @@
-<h1>Pokemon#index</h1>
-<p>Find me in app/views/pokemon/index.html.erb</p>
+<div class="jumbotron">
+    <h1>How many of a given letter in <strong>ALL<strong> Pokémon names?</h1>
+    <p class="lead">This isn't so easy to do!</p>
+</div>
+<ul class="list-group list-group-flush">
+    <% @names.each do |name| %>
+        <li class="list-group-item"><%= name.titlecase %></li>
+    <% end %>
+</ul>
+<%# TODO add a "scroll to bottom" floating button %>
+<blockquote class="blockquote text-center">
+    <p class="lead" style="border: black; border-style: dotted;">
+        ???
+    </p>
+    <footer>
+        <%= form_tag(pokemon_big_count_path, method: :get) do %>
+            <%= text_field_tag :letter, '', maxlength: 1 %>
+            <%= submit_tag 'Count',  class: "btn btn-primary btn-small" %>
+        <% end %>
+    </footer>
+</blockquote>

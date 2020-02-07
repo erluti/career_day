@@ -17,7 +17,7 @@
           <%= link_to 'Step 1', software_engineer_welcome_path, class: "list-group-item#{current_page?(software_engineer_welcome_path) ? ' active' : ''}" %>
           <%= link_to 'Step 2', simple_count_letter_a_path, class: "list-group-item#{current_page?(simple_count_letter_a_path) ? ' active' : ''}" %>
           <%= link_to 'Step 3', simple_count_any_letter_path, class: "list-group-item#{current_page?(simple_count_any_letter_path) ? ' active' : ''}" %>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <%= link_to 'Step 4', pokemon_index_path, class: "list-group-item#{current_page?(pokemon_index_path) || current_page?(pokemon_big_count_path) ? ' active' : ''}" %>
         </ul>
         <div class="col-md-9">
           <%= yield %>

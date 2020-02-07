@@ -1,2 +1,15 @@
-<h1>Pokemon#big_count</h1>
-<p>Find me in app/views/pokemon/big_count.html.erb</p>
+<div class="jumbotron">
+    <h1>How many '<em><%= @letter %></em>'s in <strong>ALL<strong> Pokémon names?</h1>
+    <p class="lead">The computer can do it fast!</p>
+</div>
+<blockquote class="blockquote text-center">
+    <p class="lead" style="border: black; border-style: dotted;">
+        <%= @letter_count %>
+    </p>
+    <footer>
+        <%= form_tag(pokemon_big_count_path, method: :get) do %>
+            <%= text_field_tag :letter, '', maxlength: 1 %>
+            <%= submit_tag 'Count',  class: "btn btn-primary btn-small" %>
+        <% end %>
+    </footer>
+</blockquote>
