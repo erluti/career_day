@@ -6,8 +6,8 @@ class PokemonControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get big_count" do
-    get pokemon_big_count_url
+  test "should get by_word" do
+    get pokemon_by_word_url
     assert_response :success
   end
 

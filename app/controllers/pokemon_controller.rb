@@ -4,7 +4,6 @@ class PokemonController < ApplicationController
   end
 
   def big_count
-    # REVIEW make a "LetterCounter" class and show off tests?
     @letter = params[:letter]
     lower_letter = @letter.downcase
     @names = Pokemon.pluck(:name).select { |name| name.include?(lower_letter) }
