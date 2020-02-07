@@ -16,4 +16,30 @@ module PokemonHelper
       image_tag("pokemon/#{pokemon.name}.png", width: 96)
     end
   end
+
+  def emphasized_name(pokemon, word)
+    name = pokemon.name.split('')
+    letters = word.downcase.split('')
+    capital = true
+    emphasized_name = ""
+    name.each do |letter|
+      match = letter == letters.first
+
+      if capital
+        letter.upcase!
+        capital = false
+      elsif letter == '-'
+        letter = ' '
+        capital = true
+      end
+
+      if match
+        emphasized_name += "<strong><u><mark>#{letter}</mark></u></strong>"
+        letters.shift
+      else
+        emphasized_name += letter
+      end
+    end
+    emphasized_name.html_safe
+  end
 end

@@ -8,7 +8,7 @@
             <table class="table">
                 <% @matches.each do |pokemon| %>
                     <tr>
-                        <th><%= pokemon.name.titlecase %></th>
+                        <th><%= emphasized_name(pokemon, @word) %></th>
                         <td><%= image_for(pokemon) %></td>
                     </tr>
                 <% end %>

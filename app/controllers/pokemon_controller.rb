@@ -14,7 +14,7 @@ class PokemonController < ApplicationController
   def by_word
     @word = params[:word]
     if @word
-      matcher = Regexp.new(@word.split('').join('.*'))
+      matcher = Regexp.new(@word.split('').join('.*'), 'i')
       @matches = Pokemon.all.select { |pokemon| pokemon.name =~ matcher }
     end
   end
