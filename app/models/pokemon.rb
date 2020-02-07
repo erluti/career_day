@@ -1,10 +1,12 @@
 class Pokemon < ApplicationRecord
   def image_path(external_url:false)
-    fetcher = PokemonFetcher.new
     if external_url
-      fetcher.image_url(self.name)
+      return self.external_url unless self.external_url.nil?
+      self.external_url = PokemonFetcher.new.image_url(self.name) || 'not found'
+      save!
+      self.external_url
     else
-      fetcher.image_path(self.name)
+      PokemonFetcher.new.image_path(self.name)
     end
   end
 end
