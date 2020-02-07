@@ -29,3 +29,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# pokemon images from api, don't store in github
+app/assets/images/pokemon/*
+.DS_Store
