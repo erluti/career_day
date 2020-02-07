@@ -1,2 +1,19 @@
-<h1>SimpleCount#any_letter</h1>
-<p>Find me in app/views/simple_count/any_letter.html.erb</p>
+<div class="jumbotron">
+    <h1>How many '<em><%= @letter %></em>'s in <strong>Pikachu<strong>?</h1>
+    <p class="lead">A really easy to solve question</p>
+</div>
+<blockquote class="blockquote text-center">
+    <p class="lead" style="border: black; border-style: dotted;">
+        <% if @letter_count %>
+            <%= @letter_count %>
+        <% else %>
+            ???
+        <% end %>
+    </p>
+    <footer>
+        <%= form_tag(simple_count_any_letter_path, method: :get) do %>
+            <%= text_field_tag :letter, '', maxlength: 1 %>
+            <%= submit_tag 'Count',  class: "btn btn-primary btn-small" %>
+        <% end %>
+    </footer>
+</blockquote>
