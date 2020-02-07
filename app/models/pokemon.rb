@@ -1,4 +1,5 @@
 class Pokemon < ApplicationRecord
+  # TODO just always external_url
   def image_path(external_url:false)
     if external_url
       return self.external_url unless self.external_url.nil?
