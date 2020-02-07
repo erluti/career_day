@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pokemon/index'
+  get 'pokemon/big_count'
   get 'simple_count/letter_a'
   get 'simple_count/any_letter'
   get 'software_engineer/welcome'
