@@ -13,3 +13,8 @@
         <% end %>
     </footer>
 </blockquote>
+<ul class="list-inline">
+    <% @names.each do |name| %>
+        <li class="list-inline-item"><%= name.titlecase %></li>
+    <% end %>
+</ul>
