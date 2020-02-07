@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CareerDay</title>
+    <title>Career Day</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,14 +11,15 @@
 
   <body>
     <div class="container-fluid">
-      <h1>Career Day!</h1>
+      <h1>Career Day! <small><em>the web page</em></small></h1>
       <div class="row" style="padding-left: 10px;">
         <ul class="list-group col-sm-2">
-          <%= link_to 'Step 1', software_engineer_welcome_path, class: "list-group-item#{current_page?(software_engineer_welcome_path) ? ' active' : ''}" %>
-          <%= link_to 'Step 2', simple_count_letter_a_path, class: "list-group-item#{current_page?(simple_count_letter_a_path) ? ' active' : ''}" %>
-          <%= link_to 'Step 3', simple_count_any_letter_path, class: "list-group-item#{current_page?(simple_count_any_letter_path) ? ' active' : ''}" %>
-          <%= link_to 'Step 4', pokemon_index_path, class: "list-group-item#{current_page?(pokemon_index_path) || current_page?(pokemon_big_count_path) ? ' active' : ''}" %>
-          <%= link_to 'Step 5', pokemon_by_word_path, class: "list-group-item#{current_page?(pokemon_by_word_path) ? ' active' : ''}" %>
+          <%= link_to 'What career?', software_engineer_welcome_path, class: "list-group-item#{current_page?(software_engineer_welcome_path) ? ' active' : ''}" %>
+          <%= link_to 'Can you do this?', simple_count_letter_a_path, class: "list-group-item#{current_page?(simple_count_letter_a_path) ? ' active' : ''}" %>
+          <%= link_to 'Or this?', simple_count_any_letter_path, class: "list-group-item#{current_page?(simple_count_any_letter_path) ? ' active' : ''}" %>
+          <%= link_to 'At scale?', pokemon_index_path, class: "list-group-item#{current_page?(pokemon_index_path) || current_page?(pokemon_big_count_path) ? ' active' : ''}" %>
+          <%= link_to 'Find new info?', pokemon_by_word_path, class: "list-group-item#{current_page?(pokemon_by_word_path) ? ' active' : ''}" %>
+          <%= link_to 'Questions?', software_engineer_questions_path, class: "list-group-item#{current_page?(software_engineer_questions_path) ? ' active' : ''}" %>
         </ul>
         <div class="col-md-9">
           <%= yield %>
