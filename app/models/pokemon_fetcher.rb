@@ -19,7 +19,7 @@ class PokemonFetcher
     image_url = JSON.parse(res.body)['sprites']['front_default']
   end
 
-  # TODO this approach fights the asset pipeline
+  # this approach fights the asset pipeline, but i used it in console to fill up the asset pipeline
   def image_path(name)
     image_path = "pokemon/#{name}.png"
     explicit_path = Rails.root.to_s + '/app/assets/images/' + image_path
